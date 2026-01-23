@@ -1,8 +1,8 @@
 # Nav
 
 一个轻量的导航站，原开发者不怎么维护了，魔改私用。  
-[源库](https://github.com/Mereithhh/van-nav)
-一下为原仓库内容，等有时间再更新
+[源库地址](https://github.com/Mereithhh/van-nav)  
+以下为原仓库内容，等有时间再更新
 > 新增了 [API 文档](https://van-nav-api.mereith.dev)，用 AI 生成的，如果不准确请提 Issue 哦。
 
 ## 预览
