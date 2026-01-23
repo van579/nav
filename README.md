@@ -50,7 +50,7 @@
 ### Docker
 
 ```
-docker run -d --name tools --restart always -p 6412:6412 -v /path/to/your/data:/app/data mereith/van-nav:latest
+docker run -d --name tools --restart always -p 6412:6412 -v /path/to/your/data:/app/data 1i1i/nav:latest
 ```
 
 打开浏览器 [http://localhost:6412](http://localhost:6412) 即可访问。
