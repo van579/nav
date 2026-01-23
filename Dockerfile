@@ -1,3 +1,4 @@
+FROM node:24-alpine AS frontendbuilder
 WORKDIR /app
 COPY . .
 RUN npm install -g pnpm
