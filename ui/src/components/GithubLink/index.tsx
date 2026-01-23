@@ -3,7 +3,7 @@ const GithubLink = () => {
   return (
     <div className="fixed bottom-3 right-3 z-50 md:bottom-5 md:right-3">
       <a
-        href="https://github.com/mereithhh/van-nav"
+        href="https://github.com/van579/nav"
         target="_blank"
         rel="noreferrer"
         className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-gray-700 shadow-sm backdrop-blur transition-all hover:bg-white hover:text-black hover:shadow-md dark:bg-gray-800/80 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white md:h-10 md:w-10"

@@ -1,7 +1,8 @@
-# Van Nav
+# Nav
 
-一个轻量的导航站，现在有搜索引擎集成了，很适合作为主页使用。有配套的[浏览器插件](https://github.com/Mereithhh/van-nav-extension)和 API。 [在线体验](https://demo-tools.mereith.com) (总有人改后台数据，后台密码就不放出来了)
-
+一个轻量的导航站，原开发者不怎么维护了，魔改私用。  
+[源库](https://github.com/Mereithhh/van-nav)
+一下为原仓库内容，等有时间再更新
 > 新增了 [API 文档](https://van-nav-api.mereith.dev)，用 AI 生成的，如果不准确请提 Issue 哦。
 
 ## 预览
@@ -112,7 +113,7 @@ server {
 ```
 [Unit]
 Description=VanNav
-Documentation=https://github.com/mereithhh/van-nav
+Documentation=https://github.com/van579/nav
 After=network.target
 Wants=network.target
 

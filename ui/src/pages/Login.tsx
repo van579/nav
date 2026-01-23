@@ -85,7 +85,7 @@ const Login: React.FC = () => {
         </form>
 
         <div className="flex justify-center">
-          <a href="https://github.com/mereith/van-nav" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-500 flex items-center gap-2 transition-colors">
+          <a href="https://github.com/van579/nav" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-500 flex items-center gap-2 transition-colors">
             <svg
               height="20"
               width="20"
