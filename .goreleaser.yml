@@ -22,12 +22,13 @@ builds:
       - goos: windows
         goarch: arm
 archives:
-  - replacements:
-      darwin: MacOs
-      linux: Linux
-      windows: Windows
-      amd64: x86_64
-      "386": x86
+  - format: tar.gz
+    # replacements:
+    #   darwin: MacOs
+    #   linux: Linux
+    #   windows: Windows
+    #   amd64: x86_64
+    #   "386": x86
 checksum:
   name_template: "checksums.txt"
 snapshot:
