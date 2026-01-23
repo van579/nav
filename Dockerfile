@@ -1,8 +1,7 @@
-FROM node:18-alpine AS frontendbuilder
 WORKDIR /app
 COPY . .
 RUN npm install -g pnpm
-RUN cd /app && cd ui && pnpm install && CI=false pnpm build && cd ..
+RUN cd /app/ui && pnpm install   && CI=false pnpm build && cd ..
 
 FROM golang:1.25-alpine AS binarybuilder
 RUN apk --no-cache --no-progress add  git
