@@ -15,6 +15,8 @@ import (
 	"github.com/mereith/nav/types"
 )
 
+var DemoMode bool
+
 func CheckErr(err error) {
 	if err != nil {
 		logger.LogError("捕获到错误：%s, 堆栈信息：%s", err, string(debug.Stack()))

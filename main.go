@@ -5,7 +5,9 @@ import (
 	"flag"
 	"fmt"
 	"net/http"
+	"os"
 	"path"
+	"strconv"
 	"strings"
 	"time"
 
@@ -13,6 +15,7 @@ import (
 	"github.com/mereith/nav/handler"
 	"github.com/mereith/nav/logger"
 	"github.com/mereith/nav/middleware"
+	"github.com/mereith/nav/utils"
 
 	"github.com/gin-contrib/gzip"
 	"github.com/gin-gonic/gin"
@@ -58,9 +61,18 @@ func BinaryFileSystem(data embed.FS, root string) *binaryFileSystem {
 }
 
 var port = flag.String("port", "6412", "指定监听端口")
+var demo = flag.Bool("demo", false, "demo模式")
 
 func main() {
 	flag.Parse()
+	utils.DemoMode = *demo
+	// 优先从环境变量获取
+	if envDemo := os.Getenv("NAV_DEMO"); envDemo != "" {
+		if val, err := strconv.ParseBool(envDemo); err == nil {
+			utils.DemoMode = val
+		}
+	}
+	logger.LogInfo("demo ? :%t", utils.DemoMode)
 	database.InitDB()
 	gin.SetMode(gin.ReleaseMode)
 	router := gin.Default()

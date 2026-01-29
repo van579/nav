@@ -15,7 +15,12 @@ axios.interceptors.request.use(
     }
 );
 axios.interceptors.response.use(
-    (response) => response,
+    (response) => {
+        if (response.data && response.data.success === false) {
+            return Promise.reject(new Error(response.data.errorMessage || "Unknown error"));
+        }
+        return response;
+    },
     (error) => {
         if (error.response?.status === 401) {
             // Clear token and redirect to login

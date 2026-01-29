@@ -7,6 +7,8 @@ import { Select } from "../../../components/ui/Select";
 import { Switch } from "../../../components/ui/Switch";
 import { Loading } from "../../../components/Loading";
 
+import toast from "react-hot-toast";
+
 export const Setting = () => {
   const { store, loading, reload } = useData();
   const [userData, setUserData] = useState<any>({});
@@ -21,16 +23,16 @@ export const Setting = () => {
   const handleUpdateUser = useCallback(
     async () => {
       if (!userData.name || !userData.password) {
-        alert("请输入用户名和密码");
+        toast.error("请输入用户名和密码");
         return;
       }
       setRequestLoading(true);
       try {
         await fetchUpdateUser({ ...userData, id: store?.user?.id });
-        alert("修改成功!");
+        toast.success("修改成功!");
         reload();
-      } catch (err) {
-        alert("修改失败!");
+      } catch (err: any) {
+        toast.error(err.message || "修改失败!");
       } finally {
         setRequestLoading(false);
       }
@@ -43,10 +45,10 @@ export const Setting = () => {
       setRequestLoading(true);
       try {
         await fetchUpdateSetting(settingData);
-        alert("修改成功!");
+        toast.success("修改成功!");
         reload();
-      } catch (err) {
-        alert("修改失败!");
+      } catch (err: any) {
+        toast.error(err.message || "修改失败!");
       } finally {
         setRequestLoading(false);
       }

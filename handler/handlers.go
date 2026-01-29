@@ -116,6 +116,17 @@ func UpdateSettingHandler(c *gin.Context) {
 		})
 		return
 	}
+	if utils.DemoMode {
+		old := service.GetSetting()
+		print(old.GuestPassword, data.GuestPassword)
+		if old.GuestPassword != data.GuestPassword {
+			c.JSON(200, gin.H{
+				"success":      false,
+				"errorMessage": "演示模式不允许修改访客密码",
+			})
+			return
+		}
+	}
 	logger.LogInfo("更新配置: %+v", data)
 	err := service.UpdateSetting(data)
 	if err != nil {
@@ -139,6 +150,13 @@ func UpdateUserHandler(c *gin.Context) {
 		c.JSON(http.StatusBadRequest, gin.H{
 			"success":      false,
 			"errorMessage": err.Error(),
+		})
+		return
+	}
+	if utils.DemoMode && data.Password != "" {
+		c.JSON(200, gin.H{
+			"success":      false,
+			"errorMessage": "演示模式不允许修改登录密码",
 		})
 		return
 	}

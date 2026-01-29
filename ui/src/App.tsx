@@ -46,10 +46,13 @@ const LoadingFallback = () => {
   return <Loading />;
 };
 
+import { Toaster } from 'react-hot-toast';
+
 function App() {
   return (
     <Router>
       <Suspense fallback={<LoadingFallback />}>
+        <Toaster />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
